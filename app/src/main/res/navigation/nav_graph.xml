@@ -3,26 +3,94 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/FirstFragment">
+    app:startDestination="@id/tempMenuFragment">
+
 
     <fragment
-        android:id="@+id/FirstFragment"
-        android:name="com.example.basketballstats11.FirstFragment"
-        android:label="@string/first_fragment_label"
-        tools:layout="@layout/fragment_first">
-
+        android:id="@+id/tempMenuFragment"
+        android:name="com.example.basketballstats11.TempMenuFragment"
+        android:label="fragment_temp_menu"
+        tools:layout="@layout/fragment_temp_menu" >
         <action
-            android:id="@+id/action_FirstFragment_to_SecondFragment"
-            app:destination="@id/SecondFragment" />
+            android:id="@+id/action_tempMenuFragment_to_r1Fragment"
+            app:destination="@id/r1Fragment" />
+        <action
+            android:id="@+id/action_tempMenuFragment_to_r2Fragment"
+            app:destination="@id/r2Fragment" />
+        <action
+            android:id="@+id/action_tempMenuFragment_to_r3Fragment"
+            app:destination="@id/r3Fragment" />
+        <action
+            android:id="@+id/action_tempMenuFragment_to_r4Fragment"
+            app:destination="@id/r4Fragment" />
+        <action
+            android:id="@+id/action_tempMenuFragment_to_r5Fragment"
+            app:destination="@id/r5Fragment" />
+        <action
+            android:id="@+id/action_tempMenuFragment_to_r6Fragment"
+            app:destination="@id/r6Fragment" />
+        <action
+            android:id="@+id/action_tempMenuFragment_to_r7Fragment"
+            app:destination="@id/r7Fragment" />
+        <action
+            android:id="@+id/action_tempMenuFragment_to_r8Fragment"
+            app:destination="@id/r8Fragment" />
+        <action
+            android:id="@+id/action_tempMenuFragment_to_r9Fragment"
+            app:destination="@id/r9Fragment" />
+        <action
+            android:id="@+id/action_tempMenuFragment_to_r10Fragment"
+            app:destination="@id/r10Fragment" />
     </fragment>
+
     <fragment
-        android:id="@+id/SecondFragment"
-        android:name="com.example.basketballstats11.SecondFragment"
-        android:label="@string/second_fragment_label"
-        tools:layout="@layout/fragment_second">
-
-        <action
-            android:id="@+id/action_SecondFragment_to_FirstFragment"
-            app:destination="@id/FirstFragment" />
-    </fragment>
+        android:id="@+id/r1Fragment"
+        android:name="com.example.basketballstats11.R1Fragment"
+        android:label="R1Fragment"
+        tools:layout="@layout/fragment_r1" />
+    <fragment
+        android:id="@+id/r2Fragment"
+        android:name="com.example.basketballstats11.R2Fragment"
+        android:label="R2Fragment"
+        tools:layout="@layout/fragment_r2" />
+    <fragment
+        android:id="@+id/r3Fragment"
+        android:name="com.example.basketballstats11.R3Fragment"
+        android:label="R3Fragment"
+        tools:layout="@layout/fragment_r3" />
+    <fragment
+        android:id="@+id/r4Fragment"
+        android:name="com.example.basketballstats11.R4Fragment"
+        android:label="R4Fragment"
+        tools:layout="@layout/fragment_r4" />
+    <fragment
+        android:id="@+id/r5Fragment"
+        android:name="com.example.basketballstats11.R5Fragment"
+        android:label="R5Fragment"
+        tools:layout="@layout/fragment_r5" />
+    <fragment
+        android:id="@+id/r6Fragment"
+        android:name="com.example.basketballstats11.R6Fragment"
+        android:label="R6Fragment"
+        tools:layout="@layout/fragment_r6" />
+    <fragment
+        android:id="@+id/r7Fragment"
+        android:name="com.example.basketballstats11.R7Fragment"
+        android:label="R7Fragment"
+        tools:layout="@layout/fragment_r7" />
+    <fragment
+        android:id="@+id/r8Fragment"
+        android:name="com.example.basketballstats11.R8Fragment"
+        android:label="R8Fragment"
+        tools:layout="@layout/fragment_r8" />
+    <fragment
+        android:id="@+id/r9Fragment"
+        android:name="com.example.basketballstats11.R9Fragment"
+        android:label="R9Fragment"
+        tools:layout="@layout/fragment_r9" />
+    <fragment
+        android:id="@+id/r10Fragment"
+        android:name="com.example.basketballstats11.R10Fragment"
+        android:label="R10Fragment"
+        tools:layout="@layout/fragment_r10" />
 </navigation>
