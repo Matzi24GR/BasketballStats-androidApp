@@ -6,17 +6,29 @@
     android:layout_height="match_parent"
     tools:context=".LoginFragment">
 
+    <TextView
+        android:id="@+id/hostText"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="8dp"
+        android:text="Using https://www.esake.tk as host"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <EditText
         android:id="@+id/loginUsernameField"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="128dp"
+        android:layout_marginTop="64dp"
         android:ems="10"
         android:hint="Username"
         android:inputType="textPersonName"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/resetHostButton" />
 
     <EditText
         android:id="@+id/loginPasswordField"
@@ -49,4 +61,37 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
+
+    <EditText
+        android:id="@+id/hostEditText"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:ems="10"
+        android:inputType="textUri"
+        android:text="https://www.esake.tk"
+        app:layout_constraintEnd_toStartOf="@+id/submitHostButton"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/hostText" />
+
+    <Button
+        android:id="@+id/submitHostButton"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_marginEnd="8dp"
+        android:text="submit"
+        app:layout_constraintBottom_toBottomOf="@+id/hostEditText"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/hostEditText" />
+
+    <Button
+        android:id="@+id/resetHostButton"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:text="Reset to Default"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/hostEditText" />
 </androidx.constraintlayout.widget.ConstraintLayout>

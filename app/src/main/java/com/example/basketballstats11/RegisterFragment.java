@@ -54,7 +54,7 @@ public class RegisterFragment extends Fragment {
                     .add("password", password)
                     .build();
 
-            Request request = new Request.Builder().url("http://192.168.1.2/api/register").post(formBody).build();
+            Request request = new Request.Builder().url(Host.getInstance().getUrl()+"/register").post(formBody).build();
 
             client.newCall(request).enqueue(new Callback() {
                 @Override

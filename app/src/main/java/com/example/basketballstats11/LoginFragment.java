@@ -42,6 +42,19 @@ public class LoginFragment extends Fragment {
     public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
+        binding.submitHostButton.setOnClickListener(v -> {
+            String host = binding.hostEditText.getText().toString();
+            Host.getInstance().setUrl(host);
+            binding.hostText.setText(String.format("Using %s as host", host));
+        });
+
+        binding.resetHostButton.setOnClickListener(v -> {
+            String host = "https://www.esake.tk";
+            Host.getInstance().setUrl(host);
+            binding.hostEditText.setText(host);
+            binding.hostText.setText(String.format("Using %s as host", host));
+        });
+
         binding.loginButton.setOnClickListener(v -> {
             String username = binding.loginUsernameField.getText().toString();
             String password = binding.loginPasswordField.getText().toString();
@@ -53,7 +66,7 @@ public class LoginFragment extends Fragment {
                     .add("password", password)
                     .build();
 
-            Request request = new Request.Builder().url("http://192.168.1.2/api/login").post(formBody).build();
+            Request request = new Request.Builder().url(Host.getInstance().getUrl()+"/login").post(formBody).build();
 
             client.newCall(request).enqueue(new Callback() {
                 @Override
