@@ -1,19 +1,20 @@
 package com.example.basketballstats11;
 
 import android.os.Bundle;
-import android.view.LayoutInflater;
-import android.view.MotionEvent;
-import android.view.View;
-import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 
-import com.example.basketballstats11.databinding.FragmentR2Binding;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
 
-public class R2Fragment extends Fragment {
+import com.example.basketballstats11.databinding.FragmentLoginBinding;
+import com.example.basketballstats11.databinding.FragmentRegisterBinding;
 
-    private FragmentR2Binding binding;
+public class RegisterFragment extends Fragment {
+
+    private FragmentRegisterBinding binding;
 
     @Override
     public View onCreateView(
@@ -21,14 +22,13 @@ public class R2Fragment extends Fragment {
             Bundle savedInstanceState
     ) {
 
-        binding = FragmentR2Binding.inflate(inflater, container, false);
+        binding = FragmentRegisterBinding.inflate(inflater, container, false);
         return binding.getRoot();
 
     }
 
     public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-
     }
 
     @Override

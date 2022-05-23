@@ -41,6 +41,9 @@
         <action
             android:id="@+id/action_tempMenuFragment_to_r10Fragment"
             app:destination="@id/r10Fragment" />
+        <action
+            android:id="@+id/action_tempMenuFragment_to_loginFragment"
+            app:destination="@id/loginFragment" />
     </fragment>
 
     <fragment
@@ -93,4 +96,18 @@
         android:name="com.example.basketballstats11.R10Fragment"
         android:label="R10Fragment"
         tools:layout="@layout/fragment_r10" />
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="com.example.basketballstats11.LoginFragment"
+        android:label="fragment_login"
+        tools:layout="@layout/fragment_login" >
+        <action
+            android:id="@+id/action_loginFragment_to_registerFragment"
+            app:destination="@id/registerFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/registerFragment"
+        android:name="com.example.basketballstats11.RegisterFragment"
+        android:label="fragment_register"
+        tools:layout="@layout/fragment_register" />
 </navigation>

@@ -1,19 +1,20 @@
 package com.example.basketballstats11;
 
 import android.os.Bundle;
-import android.view.LayoutInflater;
-import android.view.MotionEvent;
-import android.view.View;
-import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
+import androidx.navigation.fragment.NavHostFragment;
 
-import com.example.basketballstats11.databinding.FragmentR2Binding;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
 
-public class R2Fragment extends Fragment {
+import com.example.basketballstats11.databinding.FragmentLoginBinding;
 
-    private FragmentR2Binding binding;
+public class LoginFragment extends Fragment {
+
+    private FragmentLoginBinding binding;
 
     @Override
     public View onCreateView(
@@ -21,7 +22,7 @@ public class R2Fragment extends Fragment {
             Bundle savedInstanceState
     ) {
 
-        binding = FragmentR2Binding.inflate(inflater, container, false);
+        binding = FragmentLoginBinding.inflate(inflater, container, false);
         return binding.getRoot();
 
     }
@@ -29,6 +30,9 @@ public class R2Fragment extends Fragment {
     public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
+        binding.navigateRegisterButton.setOnClickListener(v -> {
+            NavHostFragment.findNavController(LoginFragment.this).navigate(R.id.action_loginFragment_to_registerFragment);
+        });
     }
 
     @Override

@@ -29,6 +29,14 @@ public class TempMenuFragment extends Fragment {
     public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
+        binding.navigateLoginButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                NavHostFragment.findNavController(TempMenuFragment.this)
+                        .navigate(R.id.action_tempMenuFragment_to_loginFragment);
+            }
+        });
+
         binding.buttonR1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
