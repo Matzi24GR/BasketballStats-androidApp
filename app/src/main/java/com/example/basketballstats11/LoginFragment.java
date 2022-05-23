@@ -59,7 +59,7 @@ public class LoginFragment extends Fragment {
                 @Override
                 public void onFailure(Call call, IOException e) {
                     Log.i("LoginFragment", e.toString(), null);
-                    Toast.makeText(getContext(), "Error", Toast.LENGTH_SHORT).show();
+                    requireActivity().runOnUiThread( () -> { Toast.makeText(getContext(), "Error", Toast.LENGTH_SHORT).show(); } );
                     call.cancel();
                 }
 
