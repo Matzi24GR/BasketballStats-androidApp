@@ -1,7 +1,7 @@
 package com.example.basketballstats11;
 
 public class Host {
-    private String url = "https://www.esake.tk/api";
+    private String url = "https://www.esake.tk";
 
     private static Host instance;
 
@@ -13,10 +13,14 @@ public class Host {
     }
 
     public void setUrl(String url) {
-        this.url = url+"/api";
+        this.url = url;
     }
 
     public String getUrl() {
+        return url+"/api";
+    }
+
+    public String getBaseUrl() {
         return url;
     }
 
