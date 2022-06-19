@@ -3,7 +3,6 @@ package com.example.basketballstats11;
 
 import android.content.Context;
 import android.net.Uri;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,6 +10,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.constraintlayout.widget.ConstraintLayout;
+import androidx.navigation.NavController;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.squareup.picasso.Picasso;
@@ -26,6 +26,7 @@ import java.util.Date;
 public class GameAdapter extends RecyclerView.Adapter<GameAdapter.ViewHolder> {
 
     private ArrayList<Game> localDataSet;
+    private NavController navController;
 
     /**
      * Provide a reference to the type of views that you are using
@@ -82,8 +83,9 @@ public class GameAdapter extends RecyclerView.Adapter<GameAdapter.ViewHolder> {
      * @param dataSet String[] containing the data to populate views to be used
      * by RecyclerView.
      */
-    public GameAdapter(ArrayList<Game> dataSet) {
+    public GameAdapter(ArrayList<Game> dataSet, NavController navController) {
         localDataSet = dataSet;
+        this.navController = navController;
     }
 
     // Create new views (invoked by the layout manager)
@@ -102,7 +104,8 @@ public class GameAdapter extends RecyclerView.Adapter<GameAdapter.ViewHolder> {
         Game game = localDataSet.get(position);
 
         viewHolder.getLayout().setOnClickListener(v -> {
-            // navigate
+            AdminFragmentDirections.ActionAdminFragmentToR2Fragment action = AdminFragmentDirections.actionAdminFragmentToR2Fragment(game.getId(), game.getTeamA(), game.getTeamB());
+            navController.navigate(action);
         });
 
         DateFormat formatter = SimpleDateFormat.getDateTimeInstance();

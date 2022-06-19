@@ -4,6 +4,8 @@ import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
+import androidx.navigation.NavController;
+import androidx.navigation.fragment.NavHostFragment;
 import androidx.recyclerview.widget.DividerItemDecoration;
 import androidx.recyclerview.widget.LinearLayoutManager;
 
@@ -52,7 +54,7 @@ public class AdminFragment extends Fragment {
     public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        GameAdapter adapter = new GameAdapter(games);
+        GameAdapter adapter = new GameAdapter(games, NavHostFragment.findNavController(AdminFragment.this));
         binding.gameRecycler.setAdapter(adapter);
         binding.gameRecycler.setLayoutManager(new LinearLayoutManager(requireContext()));
         binding.gameRecycler.addItemDecoration(new DividerItemDecoration(getContext(),LinearLayoutManager.VERTICAL));
@@ -73,6 +75,7 @@ public class AdminFragment extends Fragment {
                 try {
                     JSONObject json = new JSONObject(myresponse);
                     JSONArray array = json.getJSONArray("games");
+                    games.clear();
                     for (int i=0; i<array.length(); i++) {
                         games.add(new Game(array.getJSONObject(i)));
                     }

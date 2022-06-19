@@ -7,9 +7,12 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.ActionBar;
 import androidx.fragment.app.Fragment;
 
 import com.example.basketballstats11.databinding.FragmentR2Binding;
+
+import java.util.Objects;
 
 public class R2Fragment extends Fragment {
 
@@ -28,6 +31,11 @@ public class R2Fragment extends Fragment {
 
     public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+        int gameID = R2FragmentArgs.fromBundle(getArguments()).getGameID();
+        String teamA = R2FragmentArgs.fromBundle(getArguments()).getTeamA();
+        String teamB = R2FragmentArgs.fromBundle(getArguments()).getTeamB();
+
+        ((MainActivity) requireActivity()).setAppBarTitle(teamA+" - "+teamB);
 
     }
 

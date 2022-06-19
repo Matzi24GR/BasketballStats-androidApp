@@ -55,7 +55,17 @@
         android:id="@+id/r2Fragment"
         android:name="com.example.basketballstats11.R2Fragment"
         android:label="R2Fragment"
-        tools:layout="@layout/fragment_r2" />
+        tools:layout="@layout/fragment_r2" >
+        <argument
+            android:name="GameID"
+            app:argType="integer" />
+        <argument
+            android:name="TeamA"
+            app:argType="string" />
+        <argument
+            android:name="TeamB"
+            app:argType="string" />
+    </fragment>
     <fragment
         android:id="@+id/r3Fragment"
         android:name="com.example.basketballstats11.R3Fragment"
@@ -120,7 +130,11 @@
         android:id="@+id/adminFragment"
         android:name="com.example.basketballstats11.AdminFragment"
         android:label="fragment_admin"
-        tools:layout="@layout/fragment_admin" />
+        tools:layout="@layout/fragment_admin" >
+        <action
+            android:id="@+id/action_adminFragment_to_r2Fragment"
+            app:destination="@id/r2Fragment" />
+    </fragment>
     <fragment
         android:id="@+id/userFragment"
         android:name="com.example.basketballstats11.UserFragment"
