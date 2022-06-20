@@ -109,8 +109,8 @@
     <fragment
         android:id="@+id/loginFragment"
         android:name="com.example.basketballstats11.LoginFragment"
-        android:label="fragment_login"
-        tools:layout="@layout/fragment_login" >
+        android:label="Login"
+        tools:layout="@layout/fragment_login">
         <action
             android:id="@+id/action_loginFragment_to_registerFragment"
             app:destination="@id/registerFragment" />
@@ -124,13 +124,13 @@
     <fragment
         android:id="@+id/registerFragment"
         android:name="com.example.basketballstats11.RegisterFragment"
-        android:label="fragment_register"
+        android:label="Register"
         tools:layout="@layout/fragment_register" />
     <fragment
         android:id="@+id/adminFragment"
         android:name="com.example.basketballstats11.AdminFragment"
-        android:label="fragment_admin"
-        tools:layout="@layout/fragment_admin" >
+        android:label="Admin Panel"
+        tools:layout="@layout/fragment_admin">
         <action
             android:id="@+id/action_adminFragment_to_r2Fragment"
             app:destination="@id/r2Fragment" />
@@ -138,7 +138,7 @@
     <fragment
         android:id="@+id/userFragment"
         android:name="com.example.basketballstats11.UserFragment"
-        android:label="fragment_user"
+        android:label="User Panel"
         tools:layout="@layout/fragment_user" />
     <action
         android:id="@+id/action_global_tempMenuFragment"
